@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+---
+<Base title="Contacto — Tecnología TTF" description="Contanos tu necesidad; armamos un plan y un MVP claro.">
+  <Section eyebrow="Contacto" title="Hablemos">
+    <!-- Placeholder simple (vos después enchufás React/endpoint/Resend) -->
+    <form class="grid gap-4 max-w-xl">
+      <input class="bg-neutral-900 rounded px-4 py-3 ring-1 ring-white/10" type="text" name="name" placeholder="Tu nombre" required />
+      <input class="bg-neutral-900 rounded px-4 py-3 ring-1 ring-white/10" type="email" name="email" placeholder="Email" required />
+      <input class="bg-neutral-900 rounded px-4 py-3 ring-1 ring-white/10" type="tel" name="phone" placeholder="Teléfono (opcional)" />
+      <textarea class="bg-neutral-900 rounded px-4 py-3 ring-1 ring-white/10 min-h-32" name="message" placeholder="Contanos tu necesidad" required></textarea>
+      <button type="submit" class="justify-self-start px-5 py-2 rounded bg-violet-500 text-black font-semibold hover:bg-violet-400">Enviar</button>
+    </form>
+    <p class="mt-3 text-sm text-neutral-400">o escribinos por <a class="underline hover:text-white" href="https://wa.me/XXXXXXXXXXX" target="_blank">WhatsApp</a></p>
+  </Section>
+</Base>

@@ -1,16 +1,42 @@
 ---
-
+import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import CardService from '../components/CardService.astro'
+import CTA from '../components/CTA.astro'
 ---
+<Base title="Tecnología TTF — Innovación con criterio humano" description="Desarrollamos software, IA y sistemas que se adaptan a la vida real.">
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Tecnología moderna <span class="text-violet-400">con criterio humano</span>
+      </h1>
+      <p class="mt-4 text-neutral-300">
+        Convertimos la innovación en soluciones reales: <b>IA aplicada</b>, <b>desarrollo web y apps</b>, <b>animación & 3D</b>.
+        Menos ruido, más impacto.
+      </p>
+      <div class="mt-6 flex gap-3">
+        <a href="/contacto" class="px-5 py-2 rounded bg-violet-500 text-black font-semibold hover:bg-violet-400">Hablemos</a>
+        <a href="/servicios" class="px-5 py-2 rounded ring-1 ring-white/20 hover:ring-violet-400">Ver servicios</a>
+      </div>
+    </div>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <Section eyebrow="Qué hacemos" title="Servicios clave">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <CardService icon="🤖" title="IA aplicada" desc="Asistentes, automatización, analítica y mejora de procesos con IA responsable." href="/servicios#ia" />
+      <CardService icon="🖥️" title="Web & Apps" desc="Sitios, e-commerce y apps móviles con foco en UX, performance y escalabilidad." href="/servicios#web" />
+      <CardService icon="🎬" title="Animación & 3D" desc="Renders, motion y prototipado 3D para comunicar y vender mejor." href="/servicios#3d" />
+    </div>
+  </Section>
+
+  <Section eyebrow="Cómo trabajamos" title="De problema a producto">
+    <ol class="grid md:grid-cols-4 gap-5 text-sm">
+      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10"><b>1. Diagnóstico</b><br/>Escuchamos el problema y definimos éxito.</li>
+      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10"><b>2. Prototipo</b><br/>Armamos un MVP medible, rápido.</li>
+      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10"><b>3. Iteración</b><br/>Mejoramos con datos, no con suposiciones.</li>
+      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10"><b>4. Escala</b><br/>Automatizamos, integramos y optimizamos.</li>
+    </ol>
+  </Section>
+
+  <CTA title="¿Listo para llevar tu tecnología al siguiente nivel?" subtitle="Agendemos una llamada y definamos un plan de valor claro." />
+</Base>

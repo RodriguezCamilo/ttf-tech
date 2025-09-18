@@ -1,0 +1,10 @@
+---
+const { title, subtitle, ctaHref = '/contacto', ctaText = 'Hablemos' } = Astro.props as {
+  title: string; subtitle?: string; ctaHref?: string; ctaText?: string
+}
+---
+<section class="mx-auto max-w-6xl px-4 my-16 rounded-2xl bg-neutral-900 p-8 ring-1 ring-white/10">
+  <h2 class="text-2xl font-bold">{title}</h2>
+  {subtitle && <p class="mt-2 text-neutral-300">{subtitle}</p>}
+  <a href={ctaHref} class="inline-block mt-6 px-5 py-2 rounded bg-violet-500 text-black font-semibold hover:bg-violet-400"> {ctaText} </a>
+</section>

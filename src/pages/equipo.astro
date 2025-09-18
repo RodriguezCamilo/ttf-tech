@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro'
+import Section from '../components/Section.astro'
+import CardPerson from '../components/CardPerson.astro'
+---
+<Base title="Equipo — Tecnología TTF" description="Dirección y liderazgos del área Tech.">
+  <Section eyebrow="Equipo" title="Liderazgo Tech">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <CardPerson name="Camilo Rodríguez" role="Dirección / Desarrollo Web & Apps" linkedin="https://www.linkedin.com/in/..." />
+      <CardPerson name="Subdirección IA" role="IA aplicada" />
+      <CardPerson name="Subdirección Programación" role="Programación" />
+    </div>
+  </Section>
+</Base>

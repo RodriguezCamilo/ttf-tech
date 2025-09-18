@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Modo oscuro por defecto */
+:root { color-scheme: dark; }
+html { background: var(--color-ttf-black); color: white; }
+
+/* Tokens (Tailwind v4) */
+@theme {
+  /* Colores TTF */
+  --color-ttf-violet: #7A2EF6;
+  --color-ttf-violet-2: #9C5CFF;
+  --color-ttf-black: #0B0B0F;
+  --color-ttf-gray: #13131A;
+  --color-ttf-gray-2: #1B1B24;
+  --color-ttf-accent: #61E7F7;
+
+  /* Tipografía base */
+  --font-sans: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+/* Helpers comunes */
+a { color: var(--color-ttf-violet); transition: color .2s; }
+a:hover { color: var(--color-ttf-violet-2); }
+
+/* Contenedor centrado */
+.container { margin-inline: auto; max-width: 80rem; padding-inline: 1rem; }
+
+/* (Opcional) utilidades personalizadas */
+@utility ring-card {
+  @apply ring-1 ring-white/5 rounded-xl bg-[--color-ttf-gray-2];
+}
