@@ -1,17 +1,54 @@
 ---
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
+import Base from "../layouts/Base.astro";
+import "../styles/global.css";
 ---
+
 <Base title="Proceso — Tecnología TTF" description="Diagnóstico claro, MVP rápido, iteración con datos, escalado responsable.">
-  <Section eyebrow="Proceso" title="Nuestro enfoque">
-    <div class="prose prose-invert max-w-none">
-      <p>Escuchamos primero. Diagnosticamos el problema real y definimos qué significa “éxito” para tu organización. Construimos un MVP útil en semanas, medimos impacto y escalamos lo que funciona.</p>
-      <ul class="list-disc pl-5">
-        <li><b>Diagnóstico</b> – problema, objetivos, métricas.</li>
-        <li><b>MVP</b> – prototipo funcional y validación.</li>
-        <li><b>Iteración</b> – mejoras basadas en datos.</li>
-        <li><b>Escala</b> – automatización, performance, seguridad.</li>
-      </ul>
+  <section class="py-28">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="text-center">
+        <div class="tracking-[.18em] uppercase text-[var(--color-ttf-accent)] text-xs mb-2">Proceso</div>
+        <h1 class="font-extrabold leading-tight text-[clamp(1.875rem,1.6vw+1rem,2.5rem)]">De problema a producto</h1>
+        <p class="mt-2 text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">Escuchamos primero. Diagnosticamos, prototipamos, medimos y escalamos.</p>
+      </div>
+
+      <!-- Steps -->
+      <div class="mt-12 grid md:grid-cols-4 gap-8">
+        {["Diagnóstico","Prototipo","Iteración","Escala"].map((t,i)=>(
+          <div class="rounded-2xl p-8 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15]">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg grid place-items-center font-extrabold text-neutral-900
+                          shadow-[0_0_18px_rgba(122,46,246,.35)]
+                          bg-[linear-gradient(135deg,#7A2EF6,#61E7F7)]">
+                {i+1}
+              </div>
+              <div>
+                <div class="font-semibold">{t}</div>
+                <p class="mt-2 text-neutral-300">
+                  {i===0 && "Objetivos, alcance, métricas de éxito."}
+                  {i===1 && "MVP útil en semanas, listo para validar."}
+                  {i===2 && "Mejoras guiadas por datos y feedback."}
+                  {i===3 && "Automatización, performance y seguridad."}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Entregables -->
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
+        {[
+          ["Documentación", "Arquitectura, decisiones técnicas y handoff claro."],
+          ["Calidad", "Revisiones de código y pruebas donde aplique."],
+          ["Métricas", "KPIs y tableros para medir impacto."]
+        ].map(([title,desc])=>(
+          <div class="rounded-2xl p-6 ring-1 ring-white/10 bg-neutral-900/60">
+            <h3 class="font-semibold">{title}</h3>
+            <p class="text-neutral-300 mt-1">{desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  </Section>
+  </section>
 </Base>

@@ -1,31 +1,45 @@
 @import "tailwindcss";
 
-/* Modo oscuro por defecto */
+/* Dark por defecto */
 :root { color-scheme: dark; }
-html { background: var(--color-ttf-black); color: white; }
+html { background: #0B0B0F; color: white; scroll-behavior: smooth; }
 
 /* Tokens (Tailwind v4) */
 @theme {
-  /* Colores TTF */
   --color-ttf-violet: #7A2EF6;
   --color-ttf-violet-2: #9C5CFF;
   --color-ttf-black: #0B0B0F;
-  --color-ttf-gray: #13131A;
-  --color-ttf-gray-2: #1B1B24;
   --color-ttf-accent: #61E7F7;
-
-  /* Tipografía base */
   --font-sans: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
 }
 
-/* Helpers comunes */
-a { color: var(--color-ttf-violet); transition: color .2s; }
-a:hover { color: var(--color-ttf-violet-2); }
-
-/* Contenedor centrado */
-.container { margin-inline: auto; max-width: 80rem; padding-inline: 1rem; }
-
-/* (Opcional) utilidades personalizadas */
-@utility ring-card {
-  @apply ring-1 ring-white/5 rounded-xl bg-[--color-ttf-gray-2];
+/* Hero grid */
+.hero-layer { position:absolute; inset:0; z-index:0; }
+.bg-hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, rgba(0,0,0,.9), transparent 70%);
+          mask-image: radial-gradient(120% 80% at 50% 0%, rgba(0,0,0,.9), transparent 70%);
+  opacity: .4;
 }
+
+/* Scrollbar estable */
+@utility scrollbar-stable { scrollbar-gutter: stable; }
+
+
+/* SERVICIOS */
+
+@utility panel-wrap-violet { @apply rounded-2xl p-[1px] bg-[linear-gradient(180deg,rgba(122,46,246,.55),rgba(97,231,247,.25))]; }
+@utility panel-wrap-slate  { @apply rounded-2xl p-[1px] bg-[linear-gradient(180deg,rgba(255,255,255,.14),rgba(122,46,246,.18))]; }
+@utility panel             { @apply h-full rounded-2xl p-8 ring-1 ring-inset ring-white/10 bg-neutral-900/40 supports-[backdrop-filter]:backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,.06)]; }
+
+/* Eyebrow/Chip degradado */
+@utility chip-grad { @apply inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-bold text-neutral-900 bg-[linear-gradient(135deg,#7A2EF6,#61E7F7)]; }
+
+/* Lista con check */
+@utility li-check { @apply rounded-lg p-3 ring-1 ring-white/10 bg-neutral-900/60 before:content-['✓'] before:text-[--color-ttf-accent] before:mr-2; }
+
+/* Divisor suave */
+@utility divider-soft { @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent; }

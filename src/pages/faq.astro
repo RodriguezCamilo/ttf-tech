@@ -1,16 +1,50 @@
 ---
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
+import Base from "../layouts/Base.astro";
+import "../styles/global.css";
 ---
+
 <Base title="FAQ — Tecnología TTF" description="Preguntas frecuentes sobre nuestro trabajo y entregables.">
-  <Section eyebrow="FAQ" title="Preguntas frecuentes">
-    <details class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10 mb-3">
-      <summary class="font-semibold cursor-pointer">¿Trabajan con precios fijos?</summary>
-      <p class="mt-2 text-neutral-300">Trabajamos por alcance y entregables. Cotizamos el MVP y luego iteraciones/escala.</p>
-    </details>
-    <details class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10 mb-3">
-      <summary class="font-semibold cursor-pointer">¿Integran IA en proyectos existentes?</summary>
-      <p class="mt-2 text-neutral-300">Sí. Hacemos diagnóstico y proponemos automatizaciones de alto retorno.</p>
-    </details>
-  </Section>
+  <section class="py-28">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="text-center">
+        <div class="tracking-[.18em] uppercase text-[var(--color-ttf-accent)] text-xs mb-2">FAQ</div>
+        <h1 class="font-extrabold leading-tight text-[clamp(1.875rem,1.6vw+1rem,2.5rem)]">Preguntas frecuentes</h1>
+      </div>
+
+      <div class="mt-10 space-y-4">
+        <!-- item -->
+        <details class="group rounded-2xl p-5 ring-1 ring-white/10 bg-neutral-900/60 open:bg-neutral-900/70 transition">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold list-none">
+            <span>¿Trabajan con precios fijos?</span>
+            <span class="text-neutral-400 group-open:rotate-45 transition">+</span>
+          </summary>
+          <p class="mt-2 text-neutral-300">Trabajamos por alcance y entregables. Cotizamos el MVP y luego iteraciones y/o escala.</p>
+        </details>
+
+        <details class="group rounded-2xl p-5 ring-1 ring-white/10 bg-neutral-900/60 open:bg-neutral-900/70 transition">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold list-none">
+            <span>¿Integran IA en proyectos existentes?</span>
+            <span class="text-neutral-400 group-open:rotate-45 transition">+</span>
+          </summary>
+          <p class="mt-2 text-neutral-300">Sí. Hacemos diagnóstico, definimos quick wins y proponemos automatizaciones de alto retorno.</p>
+        </details>
+
+        <details class="group rounded-2xl p-5 ring-1 ring-white/10 bg-neutral-900/60 open:bg-neutral-900/70 transition">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold list-none">
+            <span>¿Qué garantías de calidad ofrecen?</span>
+            <span class="text-neutral-400 group-open:rotate-45 transition">+</span>
+          </summary>
+          <p class="mt-2 text-neutral-300">KPIs acordados, revisiones de código, pruebas E2E donde aplique y demo funcional en cada entrega.</p>
+        </details>
+
+        <details class="group rounded-2xl p-5 ring-1 ring-white/10 bg-neutral-900/60 open:bg-neutral-900/70 transition">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold list-none">
+            <span>¿Cómo es la comunicación?</span>
+            <span class="text-neutral-400 group-open:rotate-45 transition">+</span>
+          </summary>
+          <p class="mt-2 text-neutral-300">Canales acordados (Discord/WhatsApp/Email), tablero de tareas y un responsable técnico por proyecto.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 </Base>

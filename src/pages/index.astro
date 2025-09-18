@@ -1,42 +1,141 @@
 ---
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import CardService from '../components/CardService.astro'
-import CTA from '../components/CTA.astro'
+import Base from "../layouts/Base.astro";
+import "../styles/global.css";
 ---
-<Base title="Tecnología TTF — Innovación con criterio humano" description="Desarrollamos software, IA y sistemas que se adaptan a la vida real.">
-  <section class="mx-auto max-w-6xl px-4 py-16">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-        Tecnología moderna <span class="text-violet-400">con criterio humano</span>
+
+<Base title="Tecnología TTF — Innovación con criterio humano"
+      description="Desarrollamos software, IA y sistemas que se adaptan a la vida real.">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden h-dvh flex items-center bg-neutral-950">
+    <div class="hero-layer bg-hero-grid"></div>
+
+    <div class="relative z-10 mx-auto max-w-[96rem] px-4 text-center">
+      <h1 class="font-extrabold leading-tight text-[clamp(2.75rem,4vw+1rem,4.5rem)]">
+        Tecnología moderna <br />
+        <span class="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">
+          con criterio humano
+        </span>
       </h1>
-      <p class="mt-4 text-neutral-300">
-        Convertimos la innovación en soluciones reales: <b>IA aplicada</b>, <b>desarrollo web y apps</b>, <b>animación & 3D</b>.
-        Menos ruido, más impacto.
+
+      <p class="mt-5 mx-auto max-w-3xl text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">
+        Convertimos la innovación en soluciones reales: IA aplicada, desarrollo web & apps, animación y 3D.
       </p>
-      <div class="mt-6 flex gap-3">
-        <a href="/contacto" class="px-5 py-2 rounded bg-violet-500 text-black font-semibold hover:bg-violet-400">Hablemos</a>
-        <a href="/servicios" class="px-5 py-2 rounded ring-1 ring-white/20 hover:ring-violet-400">Ver servicios</a>
+
+      <div class="mt-9 flex justify-center gap-4">
+        <!-- FIX botones -->
+        <a href="/contacto"
+           class="inline-block rounded-lg px-5 py-3 font-bold bg-violet-500 hover:bg-violet-400 text-black
+                  focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors">
+          Hablemos
+        </a>
+        <a href="/servicios"
+           class="inline-block rounded-lg px-5 py-3 font-bold border border-white/20 hover:border-violet-500
+                  focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors">
+          Ver servicios
+        </a>
+      </div>
+    </div>
+  </section>
+<div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16"></div>
+
+  <!-- SERVICIOS -->
+  <section class="py-28">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="text-start">
+        <div class="tracking-[.18em] uppercase text-[var(--color-ttf-accent)] text-xs mb-2">Qué hacemos</div>
+        <h2 class="font-extrabold leading-tight text-[clamp(1.875rem,1.6vw+1rem,2.5rem)]">Servicios</h2>
+        <p class="mt-2 text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">
+          Soluciones que combinan IA, desarrollo y comunicación visual.
+        </p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card base -->
+        <div class="group rounded-2xl p-8 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15]
+                    transition-transform hover:-translate-y-1
+                    hover:ring-violet-500/60 hover:shadow-[0_0_36px_rgba(122,46,246,.28)]">
+          <div class="text-5xl">🤖</div>
+          <div class="mt-3 font-bold text-lg transition-colors group-hover:text-violet-400">IA aplicada</div>
+          <p class="mt-2 text-neutral-300">Automatización, analítica y mejora de procesos con IA responsable.</p>
+        </div>
+
+        <div class="group rounded-2xl p-8 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15]
+                    transition-transform hover:-translate-y-1
+                    hover:ring-violet-500/60 hover:shadow-[0_0_36px_rgba(122,46,246,.28)]">
+          <div class="text-5xl">🖥️</div>
+          <div class="mt-3 font-bold text-lg transition-colors group-hover:text-violet-400">Web & Apps</div>
+          <p class="mt-2 text-neutral-300">Sitios, e-commerce y apps móviles con foco en UX y escalabilidad.</p>
+        </div>
+
+        <div class="group rounded-2xl p-8 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15]
+                    transition-transform hover:-translate-y-1
+                    hover:ring-violet-500/60 hover:shadow-[0_0_36px_rgba(122,46,246,.28)]">
+          <div class="text-5xl">🎬</div>
+          <div class="mt-3 font-bold text-lg transition-colors group-hover:text-violet-400">Animación & 3D</div>
+          <p class="mt-2 text-neutral-300">Renders, motion y prototipado 3D para comunicar y vender mejor.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <Section eyebrow="Qué hacemos" title="Servicios clave">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <CardService icon="🤖" title="IA aplicada" desc="Asistentes, automatización, analítica y mejora de procesos con IA responsable." href="/servicios#ia" />
-      <CardService icon="🖥️" title="Web & Apps" desc="Sitios, e-commerce y apps móviles con foco en UX, performance y escalabilidad." href="/servicios#web" />
-      <CardService icon="🎬" title="Animación & 3D" desc="Renders, motion y prototipado 3D para comunicar y vender mejor." href="/servicios#3d" />
+
+  <!-- PROCESO -->
+  <section class="py-28">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="text-center md:text-right">
+        <div class="tracking-[.18em] uppercase text-[var(--color-ttf-accent)] text-xs mb-2">Cómo trabajamos</div>
+        <h2 class="font-extrabold leading-tight text-[clamp(1.875rem,1.6vw+1rem,2.5rem)]">De problema a producto</h2>
+        <p class="mt-2 text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">
+          Diagnóstico claro, MVP rápido, iteración con datos y escala responsable.
+        </p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-4 gap-8">
+        {['Diagnóstico','Prototipo','Iteración','Escala'].map((t,i) => (
+          <div class="rounded-2xl p-8 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15] transition-transform hover:-translate-y-1 hover:ring-violet-500/60 hover:shadow-[0_0_36px_rgba(122,46,246,.28)]">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg grid place-items-center font-extrabold text-neutral-900
+                          shadow-[0_0_18px_rgba(122,46,246,.35)]
+                          bg-[linear-gradient(135deg,#7A2EF6,#61E7F7)]">
+                {i+1}
+              </div>
+              <div>
+                <div class="font-semibold">{t}</div>
+                <p class="mt-2 text-neutral-300">
+                  {i===0 && 'Definimos objetivos y métricas de éxito.'}
+                  {i===1 && 'MVP útil en semanas, medible.'}
+                  {i===2 && 'Mejoras guiadas por datos reales.'}
+                  {i===3 && 'Automatizamos, integramos y optimizamos.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  </Section>
+  </section>
 
-  <Section eyebrow="Cómo trabajamos" title="De problema a producto">
-    <ol class="grid md:grid-cols-4 gap-5 text-sm">
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10"><b>1. Diagnóstico</b><br/>Escuchamos el problema y definimos éxito.</li>
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10"><b>2. Prototipo</b><br/>Armamos un MVP medible, rápido.</li>
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10"><b>3. Iteración</b><br/>Mejoramos con datos, no con suposiciones.</li>
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10"><b>4. Escala</b><br/>Automatizamos, integramos y optimizamos.</li>
-    </ol>
-  </Section>
+  <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16"></div>
 
-  <CTA title="¿Listo para llevar tu tecnología al siguiente nivel?" subtitle="Agendemos una llamada y definamos un plan de valor claro." />
+
+  <!-- CTA -->
+  <section class="py-28">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="rounded-2xl p-12 md:p-16 text-center
+                  bg-[linear-gradient(180deg,#1a1026,#0f0f15)]
+                  ring-1 ring-violet-500/50 shadow-[0_0_30px_rgba(122,46,246,.35)]">
+        <h2 class="font-extrabold leading-tight text-[clamp(1.875rem,1.6vw+1rem,2.5rem)]">¿Listo para empezar?</h2>
+        <p class="mt-2 text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">
+          Agendemos una llamada y definamos un plan con impacto concreto.
+        </p>
+        <a href="/contacto"
+           class="inline-block mt-6 rounded-lg px-6 py-3 font-bold bg-violet-500 hover:bg-violet-400 text-black
+                  focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors">
+          Contactar
+        </a>
+      </div>
+    </div>
+  </section>
+
 </Base>

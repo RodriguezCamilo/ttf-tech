@@ -1,14 +1,52 @@
 ---
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
-import CardPerson from '../components/CardPerson.astro'
+import Base from "../layouts/Base.astro";
+import "../styles/global.css";
 ---
+
 <Base title="Equipo — Tecnología TTF" description="Dirección y liderazgos del área Tech.">
-  <Section eyebrow="Equipo" title="Liderazgo Tech">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <CardPerson name="Camilo Rodríguez" role="Dirección / Desarrollo Web & Apps" linkedin="https://www.linkedin.com/in/..." />
-      <CardPerson name="Subdirección IA" role="IA aplicada" />
-      <CardPerson name="Subdirección Programación" role="Programación" />
+  <section class="py-28">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="text-center">
+        <div class="tracking-[.18em] uppercase text-[var(--color-ttf-accent)] text-xs mb-2">Equipo</div>
+        <h1 class="font-extrabold leading-tight text-[clamp(1.875rem,1.6vw+1rem,2.5rem)]">Liderazgo Tech</h1>
+        <p class="mt-2 text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">Dirección y roles de referencia del área.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card persona -->
+        <article class="rounded-2xl p-6 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15] hover:ring-violet-500/60 hover:shadow-[0_0_28px_rgba(122,46,246,.28)] transition">
+          <div class="flex items-center gap-4">
+            <img src="/favicon.svg" alt="Camilo Rodríguez" class="h-14 w-14 rounded-full ring-1 ring-white/10" />
+            <div>
+              <h3 class="font-semibold">Camilo Rodríguez</h3>
+              <p class="text-sm text-neutral-300">Dirección / Desarrollo Web & Apps</p>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-4 text-sm">
+            <a class="hover:text-white" href="https://www.linkedin.com/in/rocamilo" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl p-6 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15] hover:ring-violet-500/60 hover:shadow-[0_0_28px_rgba(122,46,246,.28)] transition">
+          <div class="flex items-center gap-4">
+            <div class="h-14 w-14 rounded-full ring-1 ring-white/10 grid place-items-center bg-neutral-900/60">IA</div>
+            <div>
+              <h3 class="font-semibold">Subdirección IA</h3>
+              <p class="text-sm text-neutral-300">IA aplicada</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl p-6 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15] hover:ring-violet-500/60 hover:shadow-[0_0_28px_rgba(122,46,246,.28)] transition">
+          <div class="flex items-center gap-4">
+            <div class="h-14 w-14 rounded-full ring-1 ring-white/10 grid place-items-center bg-neutral-900/60">3D</div>
+            <div>
+              <h3 class="font-semibold">Subdirección Animación & 3D</h3>
+              <p class="text-sm text-neutral-300">Animación y 3D</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
-  </Section>
+  </section>
 </Base>

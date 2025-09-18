@@ -1,9 +1,38 @@
 ---
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
+import Base from "../layouts/Base.astro";
+import "../styles/global.css";
 ---
+
 <Base title="Portfolio — Tecnología TTF" description="Casos y proyectos del área Tech de TTF.">
-  <Section eyebrow="Portfolio" title="Casos de éxito">
-    <p class="text-neutral-300">Pronto subiremos casos detallados (problema → solución → impacto) con material visual.</p>
-  </Section>
+  <section class="py-28">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="text-center">
+        <div class="tracking-[.18em] uppercase text-[var(--color-ttf-accent)] text-xs mb-2">Portfolio</div>
+        <h1 class="font-extrabold leading-tight text-[clamp(1.875rem,1.6vw+1rem,2.5rem)]">Casos de éxito</h1>
+        <p class="mt-2 text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">Pronto subiremos casos detallados (problema → solución → impacto).</p>
+      </div>
+
+      <!-- Grid placeholder / skeleton -->
+      <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {[1,2,3,4,5,6].map(i => (
+          <article class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-neutral-900/60">
+            <div class="aspect-video bg-neutral-800 animate-pulse"></div>
+            <div class="p-5">
+              <h3 class="font-semibold">Proyecto #{i}</h3>
+              <p class="text-neutral-300 text-sm mt-1">Descripción breve…</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <a href="/contacto"
+           class="inline-block rounded-lg px-6 py-3 font-bold bg-violet-500 hover:bg-violet-400 text-black
+                  focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors">
+          ¿Tenés un desafío? Hablemos
+        </a>
+      </div>
+    </div>
+  </section>
 </Base>

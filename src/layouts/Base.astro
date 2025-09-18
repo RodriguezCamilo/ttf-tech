@@ -1,6 +1,6 @@
 ---
-import './../styles/global.css'
-type Props = { title?: string; description?: string }
+import "./../styles/global.css";
+type Props = { title?: string; description?: string };
 const {
   title = "Tecnología TTF",
   description = "Tecnología moderna con criterio humano",
@@ -8,8 +8,9 @@ const {
 
 const year = new Date().getFullYear();
 ---
+
 <!doctype html>
-<html lang="es" class="dark">
+<html lang="es" class="dark scrollbar-stable">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -18,20 +19,58 @@ const year = new Date().getFullYear();
     <link rel="icon" href="/favicon.svg" />
   </head>
   <body class="bg-neutral-950 text-neutral-100 flex flex-col min-h-screen">
-    <header class="sticky top-0 z-50 border-b border-neutral-800/80 bg-neutral-950/80 backdrop-blur">
-      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-6">
+    <header
+      class="sticky top-0 z-50 border-b border-neutral-800/80 bg-neutral-950/80 backdrop-blur"
+    >
+      <div class="mx-auto max-w-[88rem] px-4 py-4 flex items-center gap-6">
         <a href="/" class="flex items-center gap-3">
           <img src="/favicon.svg" alt="TTF" class="h-7 w-7" />
-          <span class="font-semibold">Tecnología TTF</span>
+          <span class="font-semibold text-[var(--color-ttf-violet)]">Tecnología TTF</span>
         </a>
-        <nav class="ml-auto hidden md:flex gap-5 text-sm">
-          <a href="/servicios" class="hover:text-white">Servicios</a>
-          <a href="/portfolio" class="hover:text-white">Portfolio</a>
-          <a href="/equipo" class="hover:text-white">Equipo</a>
-          <a href="/proceso" class="hover:text-white">Proceso</a>
-          <a href="/faq" class="hover:text-white">FAQ</a>
-          <a href="/blog" class="hover:text-white">Blog</a>
-          <a href="/contacto" class="px-3 py-1 rounded bg-violet-500 hover:bg-violet-400 text-black font-semibold">Contacto</a>
+
+        <nav class="ml-auto hidden md:flex items-center gap-5 text-sm">
+          <a
+            href="/"
+            class="text-neutral-300 hover:text-white transition-colors"
+            >Inicio</a
+          >
+          <a
+            href="/servicios"
+            class="text-neutral-300 hover:text-white transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="/portfolio"
+            class="text-neutral-300 hover:text-white transition-colors"
+            >Portfolio</a
+          >
+          <a
+            href="/equipo"
+            class="text-neutral-300 hover:text-white transition-colors"
+            >Equipo</a
+          >
+          <a
+            href="/proceso"
+            class="text-neutral-300 hover:text-white transition-colors"
+            >Proceso</a
+          >
+          <a
+            href="/faq"
+            class="text-neutral-300 hover:text-white transition-colors">FAQ</a
+          >
+          <a
+            href="/blog"
+            class="text-neutral-300 hover:text-white transition-colors">Blog</a
+          >
+
+          <!-- Botón contacto FIX: usa paleta tailwind -->
+          <a
+            href="/contacto"
+            class="px-3 py-1 rounded bg-violet-500 hover:bg-violet-400 text-black font-semibold
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors"
+          >
+            Contacto
+          </a>
         </nav>
       </div>
     </header>
@@ -39,14 +78,31 @@ const year = new Date().getFullYear();
     <main class="flex-1"><slot /></main>
 
     <footer class="mt-20 border-t border-neutral-800">
-      <div class="mx-auto max-w-6xl px-4 py-8 text-sm flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8">
+      <div
+        class="mx-auto max-w-6xl px-4 py-8 text-sm flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8"
+      >
         <div class="flex-1/2 opacity-80">
           © {year} Turing to the Future · Estudio Tecnológico
         </div>
         <div class="flex gap-4">
-          <a href="https://www.instagram.com/turingtech_2025" target="_blank" rel="noreferrer" class="hover:text-white">Instagram Tech</a>
-          <a href="https://www.instagram.com/turing_tothefuture" target="_blank" rel="noreferrer" class="hover:text-white">Instagram TTF</a>
-          <a href="https://linktr.ee/Turingtec" target="_blank" rel="noreferrer" class="hover:text-white">Linktree</a>
+          <a
+            href="https://www.instagram.com/turingtech_2025"
+            target="_blank"
+            rel="noreferrer"
+            class="hover:text-white">Instagram Tech</a
+          >
+          <a
+            href="https://www.instagram.com/turing_tothefuture"
+            target="_blank"
+            rel="noreferrer"
+            class="hover:text-white">Instagram TTF</a
+          >
+          <a
+            href="https://linktr.ee/Turingtec"
+            target="_blank"
+            rel="noreferrer"
+            class="hover:text-white">Linktree</a
+          >
         </div>
       </div>
     </footer>

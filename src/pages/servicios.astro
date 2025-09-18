@@ -1,38 +1,232 @@
 ---
-import Base from '../layouts/Base.astro'
-import Section from '../components/Section.astro'
+import Base from "../layouts/Base.astro";
+import "../styles/global.css";
 ---
-<Base title="Servicios — Tecnología TTF" description="IA aplicada, desarrollo web y apps, animación y 3D.">
-  <Section eyebrow="Servicios" title="IA aplicada" id="ia">
-    <ul class="grid md:grid-cols-2 gap-5">
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10">
-        <b>Asistentes & Automatización</b><br/>Chatbots, workflows, orquestación de procesos.
-      </li>
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10">
-        <b>Analítica & Predicción</b><br/>Dashboards, insights, scoring y detección de patrones.
-      </li>
-    </ul>
-  </Section>
 
-  <Section title="Web & Apps" id="web">
-    <ul class="grid md:grid-cols-2 gap-5">
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10">
-        <b>Web institucional & e-commerce</b><br/>Astro/Next, performance, SEO, accesibilidad, CMS.
-      </li>
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10">
-        <b>Apps móviles</b><br/>PWA/React Native, auth, pagos, push, analítica.
-      </li>
-    </ul>
-  </Section>
+<Base
+  title="Servicios — Tecnología TTF"
+  description="IA aplicada, desarrollo web y apps, animación y 3D."
+>
+  <!-- Hero Servicios -->
+  <section class="py-24">
+    <div class="mx-auto max-w-[88rem] px-4 text-center">
+      <div
+        class="tracking-[.18em] uppercase text-[var(--color-ttf-accent)] text-xs mb-2"
+      >
+        Servicios
+      </div>
+      <h1
+        class="font-extrabold leading-tight text-[clamp(2rem,2.2vw+1rem,3rem)]"
+      >
+        Soluciones para generar impacto
+      </h1>
+      <p class="mt-3 text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">
+        Combinamos IA, ingeniería y comunicación visual para resolver problemas
+        reales.
+      </p>
 
-  <Section title="Animación & 3D" id="3d">
-    <ul class="grid md:grid-cols-2 gap-5">
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10">
-        <b>Renders & Motion</b><br/>Comunicación de producto, piezas para ADS y presentaciones.
-      </li>
-      <li class="rounded-xl bg-neutral-900 p-5 ring-1 ring-white/10">
-        <b>Impresión 3D</b><br/>Prototipado rápido, piezas a medida, educación.
-      </li>
-    </ul>
-  </Section>
+      <!-- Pills de ancla -->
+      <nav class="mt-6 flex flex-wrap justify-center gap-2">
+        <a href="#ia" class="rounded-full border border-white/15 bg-neutral-900/60 px-4 py-2 text-sm hover:border-violet-500/60">🤖 IA aplicada</a>
+        <a href="#web" class="rounded-full border border-white/15 bg-neutral-900/60 px-4 py-2 text-sm hover:border-violet-500/60">🖥️ Web & Apps</a>
+        <a href="#3d" class="rounded-full border border-white/15 bg-neutral-900/60 px-4 py-2 text-sm hover:border-violet-500/60">🎬 Animación & 3D</a>
+      </nav>
+    </div>
+  </section>
+
+  <div class="divider-soft"></div>
+
+  <!-- ================= IA APLICADA ================= -->
+  <section id="ia" class="py-24 scroll-mt-24">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div class="panel-wrap-violet h-full">
+          <article class="panel">
+            <span class="chip-grad">🤖 IA aplicada</span>
+            <h2 class="mt-3 text-xl font-semibold">Acelerá con IA responsable</h2>
+            <p class="mt-3 text-neutral-300">
+              Automatizamos trabajo, mejoramos decisiones y abrimos nuevos
+              canales con IA: asistentes, workflows y analítica accionable.
+            </p>
+            <div class="divider-soft my-6"></div>
+            <ul class="grid sm:grid-cols-2 gap-3 text-sm">
+              <li class="li-check">Asistentes para equipos y clientes</li>
+              <li class="li-check">Automatización de procesos</li>
+              <li class="li-check">RAG / knowledge bases</li>
+              <li class="li-check">Dashboards & predicción</li>
+            </ul>
+            <div class="mt-5 flex flex-wrap gap-2 text-xs">
+              {["OpenAI","Llama","LangChain","Supabase","Postgres","Make/Zapier"].map((t) => (
+                <span class="rounded-full border border-white/10 bg-neutral-900/60 px-3 py-1">{t}</span>
+              ))}
+            </div>
+            <a href="/contacto" class="mt-6 inline-block rounded-lg px-5 py-3 font-bold bg-violet-500 hover:bg-violet-400 text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors">
+              Pedir diagnóstico
+            </a>
+          </article>
+        </div>
+
+        <div class="panel-wrap-slate h-full">
+          <aside class="panel">
+            <h3 class="font-semibold">Qué obtenés</h3>
+            <ul class="mt-4 space-y-3 text-neutral-300">
+              <li>Mapa de oportunidades con ROI estimado.</li>
+              <li>MVP funcional en semanas.</li>
+              <li>Métricas y tableros para medir impacto.</li>
+              <li>Handoff técnico/documentación para escalar.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Capacidades -->
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        {[
+          ["Onboarding & Soporte 24/7", "Bots multi-canal entrenados con tu knowledge base."],
+          ["Orquestación de Procesos", "Integraciones con ERP/CRM y aprobaciones automáticas."],
+          ["Analítica Predictiva", "Forecasts, scoring y detección de anomalías."],
+        ].map(([t, d]) => (
+          <div class="group rounded-2xl p-6 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15] transition-transform hover:-translate-y-1 hover:ring-violet-500/60 hover:shadow-[0_0_36px_rgba(122,46,246,.28)]">
+            <h4 class="font-semibold group-hover:text-[var(--color-ttf-violet)] transition-colors">{t}</h4>
+            <p class="mt-2 text-sm text-neutral-300">{d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-soft"></div>
+
+  <!-- ================= WEB & APPS ================= -->
+  <section id="web" class="py-24 scroll-mt-24">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div class="panel-wrap-violet h-full">
+          <article class="panel">
+            <span class="chip-grad">🖥️ Web & Apps</span>
+            <h2 class="mt-3 text-xl font-semibold">Sitios rápidos, apps escalables</h2>
+            <p class="mt-3 text-neutral-300">
+              Webs accesibles y fáciles de mantener. Apps con UX impecable y
+              métricas desde el día uno.
+            </p>
+            <div class="divider-soft my-6"></div>
+            <ul class="grid sm:grid-cols-2 gap-3 text-sm">
+              <li class="li-check">Web institucional & landing de conversión</li>
+              <li class="li-check">E-commerce / pagos / suscripciones</li>
+              <li class="li-check">PWA / React Native</li>
+              <li class="li-check">SEO técnico y performance</li>
+            </ul>
+            <div class="mt-5 flex flex-wrap gap-2 text-xs">
+              {["Astro","Next.js","React","Tailwind","Vercel/Netlify","Supabase"].map((t) => (
+                <span class="rounded-full border border-white/10 bg-neutral-900/60 px-3 py-1">{t}</span>
+              ))}
+            </div>
+            <a href="/contacto" class="mt-6 inline-block rounded-lg px-5 py-3 font-bold bg-violet-500 hover:bg-violet-400 text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors">
+              Quiero un plan de sitio/app
+            </a>
+          </article>
+        </div>
+
+        <div class="panel-wrap-slate h-full">
+          <aside class="panel">
+            <h3 class="font-semibold">Entregables</h3>
+            <ul class="mt-4 space-y-3 text-neutral-300">
+              <li>Arquitectura y diseño de información.</li>
+              <li>Componentes accesibles y sistema de estilos.</li>
+              <li>CI/CD y observabilidad básica.</li>
+              <li>Documentación y handoff a equipo interno.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        {[
+          ["Headless CMS", "Contenido editable sin romper el diseño."],
+          ["Auth & Roles", "Sesiones seguras, permisos y auditoría."],
+          ["Integraciones", "API REST/GraphQL con tus sistemas actuales."],
+        ].map(([t, d]) => (
+          <div class="group rounded-2xl p-6 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15] transition-transform hover:-translate-y-1 hover:ring-violet-500/60 hover:shadow-[0_0_36px_rgba(122,46,246,.28)]">
+            <h4 class="font-semibold group-hover:text-[var(--color-ttf-violet)] transition-colors">{t}</h4>
+            <p class="mt-2 text-sm text-neutral-300">{d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-soft"></div>
+
+  <!-- ================= ANIMACIÓN & 3D ================= -->
+  <section id="3d" class="py-24 scroll-mt-24">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div class="panel-wrap-violet h-full">
+          <article class="panel">
+            <span class="chip-grad">🎬 Animación & 3D</span>
+            <h2 class="mt-3 text-xl font-semibold">Visuales que venden mejor</h2>
+            <p class="mt-3 text-neutral-300">
+              Renders, motion y prototipado 3D listos para ads, presentaciones
+              o docencia.
+            </p>
+            <div class="divider-soft my-6"></div>
+            <ul class="grid sm:grid-cols-2 gap-3 text-sm">
+              <li class="li-check">Renders de producto</li>
+              <li class="li-check">Motion graphics</li>
+              <li class="li-check">Prototipado / impresión 3D</li>
+              <li class="li-check">Piezas para campañas</li>
+            </ul>
+            <div class="mt-5 flex flex-wrap gap-2 text-xs">
+              {["Blender","After Effects","Figma","Substance"].map((t) => (
+                <span class="rounded-full border border-white/10 bg-neutral-900/60 px-3 py-1">{t}</span>
+              ))}
+            </div>
+            <a href="/contacto" class="mt-6 inline-block rounded-lg px-5 py-3 font-bold bg-violet-500 hover:bg-violet-400 text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors">
+              Quiero material visual
+            </a>
+          </article>
+        </div>
+
+        <div class="panel-wrap-slate h-full">
+          <aside class="panel">
+            <h3 class="font-semibold">Entregables</h3>
+            <ul class="mt-4 space-y-3 text-neutral-300">
+              <li>Storyboard y guión visual.</li>
+              <li>Renders/animaciones optimizadas para web/ads.</li>
+              <li>Archivos fuente y guía de uso.</li>
+              <li>Paquete de adaptaciones para redes.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        {[
+          ["Explicadores", "Conceptos técnicos, en simple y visual."],
+          ["Producto digital", "Mockups realistas y animaciones UI."],
+          ["Piezas para Ads", "Formato y duración listos para pauta."],
+        ].map(([t, d]) => (
+          <div class="group rounded-2xl p-6 ring-1 ring-white/10 bg-gradient-to-b from-[#17171f] to-[#0f0f15] transition-transform hover:-translate-y-1 hover:ring-violet-500/60 hover:shadow-[0_0_36px_rgba(122,46,246,.28)]">
+            <h4 class="font-semibold group-hover:text-[var(--color-ttf-violet)] transition-colors">{t}</h4>
+            <p class="mt-2 text-sm text-neutral-300">{d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="py-24 text-center">
+    <div class="mx-auto max-w-[88rem] px-4">
+      <div class="rounded-2xl p-12 md:p-16 bg-[linear-gradient(180deg,#1a1026,#0f0f15)] ring-1 ring-violet-500/50 shadow-[0_0_30px_rgba(122,46,246,.35)]">
+        <h2 class="font-extrabold leading-tight text-[clamp(1.875rem,1.6vw+1rem,2.5rem)]">¿Listo para priorizar y ejecutar?</h2>
+        <p class="mt-2 text-neutral-300 text-[clamp(1.05rem,.5vw+.9rem,1.25rem)]">
+          Hacemos un diagnóstico express y te proponemos un MVP con métricas claras.
+        </p>
+        <a href="/contacto" class="inline-block mt-6 rounded-lg px-6 py-3 font-bold bg-violet-500 hover:bg-violet-400 text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 transition-colors">
+          Hablemos
+        </a>
+      </div>
+    </div>
+  </section>
 </Base>
