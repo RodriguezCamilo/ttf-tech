@@ -43,3 +43,60 @@ html { background: #0B0B0F; color: white; scroll-behavior: smooth; }
 
 /* Divisor suave */
 @utility divider-soft { @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent; }
+
+/* === FUTURISTIC HERO FX (sin imágenes) === */
+.hero-fx { position: relative; overflow: hidden; }
+.fx-layer { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+
+/* Estrellas */
+.fx-stars{
+  background-image: radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity:.25;
+  animation: twinkle 8s ease-in-out infinite alternate;
+}
+
+/* God rays / luces suaves */
+.fx-rays{
+  background-image:
+    linear-gradient(120deg, rgba(255,255,255,.065), transparent 60%),
+    linear-gradient(240deg, rgba(255,255,255,.065), transparent 60%);
+  mix-blend-mode: screen;
+  opacity:.35;
+  animation: rays 14s linear infinite alternate;
+}
+
+/* Baño de color/vignette superior */
+.fx-vignette{
+  background:
+    radial-gradient(75% 55% at 50% 30%, rgba(122,46,246,.18), transparent 65%);
+}
+
+/* Horizonte / arco (2 capas: borde + glow) */
+.fx-horizon { --rim: rgba(122,46,246,.55); --glow: rgba(122,46,246,.18); }
+.fx-horizon::before,
+.fx-horizon::after{
+  content:""; position:absolute; left:50%; bottom:-26vh; transform:translateX(-50%) scale(1.1);
+  width:160%; height:90vh; border-radius:50%;
+}
+.fx-horizon::before{
+  background: radial-gradient(120% 80% at 50% 100%,
+    var(--rim) 0%, rgba(122,46,246,.35) 7%, rgba(122,46,246,0) 12%);
+}
+.fx-horizon::after{
+  background: radial-gradient(120% 80% at 50% 100%, var(--glow) 0%, transparent 60%);
+  filter: blur(12px);
+}
+
+/* Suaviza corte inferior (no más “corte en seco”) */
+.mask-bottom-soft{
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+}
+
+/* Animaciones */
+@keyframes twinkle{ 0%,100%{opacity:.2} 50%{opacity:.4} }
+@keyframes rays{ from{transform:translateY(-4%)} to{transform:translateY(4%)} }
+
+/* Tema alternativo tipo naranja (como en tus refs) */
+.hero--orange .fx-horizon{ --rim: rgba(255,110,28,.65); --glow: rgba(255,110,28,.2); }
